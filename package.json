@@ -19,6 +19,7 @@
     "@types/jasmine": "~2.5.37",
     "@types/jwt-decode": "~1.4.28",
     "@types/lodash": "~4.14.38",
+    "@types/node": "~6.0.52",
     "@types/source-map": "~0.1.29",
     "@types/uglify-js": "~2.6.28",
     "angular": "~1.5.8",
