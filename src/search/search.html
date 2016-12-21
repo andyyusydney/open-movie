@@ -1,33 +1,4 @@
 search html
-<div class="results_container" style="width:80%;margin:0 auto;">
-<ul>
-    <li class="col-md-4"></li>
-    <li class="col-md-4">
-        <a href="#" ng-click="$ctrl.sort('Title')">
-            Title
-            <span ng-show="$ctrl.sortType == 'Title' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="$ctrl.sortType == 'Title' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
-        </a>
-    </li>
-
-    <li class="col-md-4">
-        <a href="#" ng-click="$ctrl.sort('Year')">
-            Year
-            <span ng-show="$ctrl.sortType == 'Year' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="$ctrl.sortType == 'Year' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
-        </a>
-    </li>
-</ul>
-
-<ul ng-repeat="movie in $ctrl.searchResults | orderBy:$ctrl.sortType:$ctrl.sortReverse">
-    <li class="col-md-4" style="height: 30px;">
-        <img width="30" height="30" src={{movie.Poster}} />
-    </li>
-    <li class="col-md-4" style="height: 30px;">
-        Title: {{movie.Title}}
-    </li>
-    <li class="col-md-4" style="height: 30px;">
-        Year: {{movie.Year}}
-    </li>
-</ul>
+<div ng-if="$ctrl.displaySearchResults">
+    <list items-list="$ctrl.searchResults"></list>
 </div>

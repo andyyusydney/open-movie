@@ -3,8 +3,7 @@ import {ISearchService} from './search.service';
 class SearchController implements ng.IComponentController {
     private searchService: ISearchService;
     private searchResults: Array<any>;
-    private sortType: string;
-    private sortReverse: Boolean;
+    private displaySearchResults: boolean;
 
     constructor(searchService: ISearchService) {
         console.log('search controller');
@@ -12,17 +11,8 @@ class SearchController implements ng.IComponentController {
         this.searchService.searchByName('Batman').then((results:any) => {
             console.log('results=', results);
             this.searchResults = results.data.Search;
+            this.displaySearchResults = true;
         });
-    }
-
-    private sort(fieldName) {
-        console.log('sort called!');
-        if (this.sortType !== fieldName) {
-            this.sortType = fieldName;
-            this.sortReverse = true;
-        } else {
-            this.sortReverse = !this.sortReverse;
-        }
     }
 }
 

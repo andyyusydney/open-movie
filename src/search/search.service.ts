@@ -15,7 +15,7 @@ interface ISearchService {
 
 class SearchService implements ISearchService {
     private $http: ng.IHttpService;
-    readonly apiKey = 'a4becd26'; // TODO: apiKey should not keep at frontend.
+    readonly apiKey = 'a4becd26'; // TODO: apiKey should not keep at frontend. Does search api need apiKey?
 
     constructor($http: ng.IHttpService) {
         this.$http = $http;
