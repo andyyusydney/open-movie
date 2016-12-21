@@ -7,9 +7,7 @@ type MovieTypes = {
 }
 
 interface ISearchService {
-    searchByName(name:string): ng.IPromise<any>;
-    searchByType(type:MovieTypes): ng.IPromise<any>;
-    searchByYear(year:string): ng.IPromise<any>;
+    searchByTitle(params:Object): ng.IPromise<any>;
     searchByIMDbID(id:string): ng.IPromise<any>;
 }
 
@@ -52,16 +50,8 @@ class SearchService implements ISearchService {
         });
     }
 
-    public searchByName = (name:string): ng.IPromise<any> => {
-        return this.search({s: name});
-    };
-
-    public searchByType = (type:MovieTypes): ng.IPromise<any> => {
-        return this.search({type: type});
-    };
-
-    public searchByYear = (year:string): ng.IPromise<any> => {
-        return this.search({y: year});
+    public searchByTitle = (params:Object): ng.IPromise<any> => {
+        return this.search(params);
     };
 
     public searchByIMDbID = (id:string): ng.IPromise<any> => {
