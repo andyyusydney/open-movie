@@ -3,9 +3,11 @@ class ListController implements ng.IComponentController {
     private sortType: string;
     private sortReverse: Boolean;
 
-    constructor() {
+    constructor($stateParams) {
         console.log('list controller');
-        console.log("this.itemsList=", this.itemsList);
+        //console.log("this.itemsList=", this.itemsList);
+        console.log("$stateParams.listData=", $stateParams.listData);
+        this.itemsList = $stateParams.listData;
     }
 
     private sort(fieldName) {
@@ -20,4 +22,4 @@ class ListController implements ng.IComponentController {
 }
 
 export default ListController;
-ListController.$inject = [];
+ListController.$inject = ['$stateParams'];

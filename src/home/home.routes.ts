@@ -2,8 +2,8 @@ routes.$inject = ['$stateProvider'];
 
 export default function routes($stateProvider) {
     $stateProvider
-        .state('search', {
+        .state('home', {
             url: '/',
-            template: '<search></search>'
+            template: '<home></home>'
         });
 }
