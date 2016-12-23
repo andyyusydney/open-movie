@@ -4,7 +4,7 @@
   "description": "A seed project for a largescale angular architecture in webpack and typescript",
   "main": "/",
   "scripts": {
-    "start": "webpack --config webpack/webpack.dev.js --watch --NODE_ENV=dev",
+    "start": "webpack-dev-server --history-api-fallback --inline --progress --hot --config ./webpack/webpack.dev.js",
     "test": "karma start --NODE_ENV=test",
     "build": "webpack --config webpack/webpack.build.js --NODE_ENV=production",
     "postinstall": "typings i"
@@ -64,7 +64,8 @@
     "typings": "~1.5.0",
     "url-loader": "0.5.7",
     "wallaby-webpack": "0.0.26",
-    "webpack": "~1.13.3"
+    "webpack": "~1.13.3",
+    "webpack-dev-server": "~1.16.2"
   },
   "repository": {
     "type": "git",
