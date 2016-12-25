@@ -39,7 +39,7 @@ list html
         <a ui-sref="home.details({id:item.imdbID})">ID: {{::item.imdbID}}</a>
     </li>
     <li class="col-md-2" style="height: 30px;">
-        <img width="30" height="30" src={{::item.Poster}} />
+        <img width="30" height="30" ng-src="{{::item.Poster}}" />
     </li>
     <li class="col-md-4" style="height: 30px;">
         Title: {{::item.Title}}

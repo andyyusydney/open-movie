@@ -5,8 +5,13 @@ class SearchController implements ng.IComponentController {
     private year: string;
     private id: string;
 
-    constructor($state) {
+    constructor($state: any, $stateParams: any) {
         console.log('search controller');
+        console.log('$stateParams=', $stateParams);
+        this.title = $stateParams.s;
+        this.type = $stateParams.type;
+        this.year = $stateParams.y;
+        this.id = $stateParams.i;
         this.$state = $state;
     }
 
@@ -16,4 +21,4 @@ class SearchController implements ng.IComponentController {
 }
 
 export default SearchController;
-SearchController.$inject = ['$state'];
+SearchController.$inject = ['$state', '$stateParams'];
