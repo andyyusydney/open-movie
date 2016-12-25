@@ -1,7 +1,7 @@
 import angular = require('angular');
 
 interface IDetailsService {
-    searchByIMDbID(id:string): ng.IPromise<any>;
+    searchByIMDbID(id:string, plot: string): ng.IPromise<any>;
 }
 
 class DetailsService implements IDetailsService {
@@ -11,10 +11,10 @@ class DetailsService implements IDetailsService {
         this.$http = $http;
     }
 
-    private search = (id:string): ng.IPromise<any> => {
+    private search = (id:string, plot: string): ng.IPromise<any> => {
         let query = '';
 
-        query += 'i=' + id + '&plot=full&tomatoes=true&r=json';
+        query += 'i=' + id + '&plot='+plot+'&tomatoes=true&r=json';
 
         return this.$http({
             method: 'GET',
@@ -22,8 +22,8 @@ class DetailsService implements IDetailsService {
         });
     }
 
-    public searchByIMDbID = (id:string): ng.IPromise<any> => {
-        return this.search(id);
+    public searchByIMDbID = (id:string, plot: string): ng.IPromise<any> => {
+        return this.search(id, plot);
     };
 }
 

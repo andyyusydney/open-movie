@@ -10,7 +10,7 @@ class DetailsController implements ng.IComponentController {
         console.log("$stateParams.id=", $stateParams.id);
         console.log("this.previousState=", this.previousState);
         let id = $stateParams.id;
-        detailsService.searchByIMDbID(id).then((result) => {
+        detailsService.searchByIMDbID(id, 'full').then((result) => {
             console.log("detailsData = ", result.data);
             this.detailsData = result.data;
         });

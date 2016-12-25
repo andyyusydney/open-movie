@@ -1,54 +1,62 @@
 list html
 <div class="results_container" style="width:80%;margin:0 auto;">
-<ul>
-    <li class="col-md-2">
-        <a ng-click="$ctrl.sort('imdbID')">
-            ID
-            <span ng-show="$ctrl.sortType == 'imdbID' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="$ctrl.sortType == 'imdbID' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
-        </a>
-    </li>
-    <li class="col-md-2"></li>
-    <li class="col-md-4">
-        <a ng-click="$ctrl.sort('Title')">
-            Title
-            <span ng-show="$ctrl.sortType == 'Title' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="$ctrl.sortType == 'Title' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
-        </a>
-    </li>
+    <div>
+        <div class="col-md-2">
+            <a ng-click="$ctrl.sort('imdbID')">
+                ID
+                <span ng-show="$ctrl.sortType == 'imdbID' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'imdbID' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <a ng-click="$ctrl.sort('Title')">
+                Title
+                <span ng-show="$ctrl.sortType == 'Title' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'Title' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </div>
 
-    <li class="col-md-2">
-        <a ng-click="$ctrl.sort('Year')">
-            Year
-            <span ng-show="$ctrl.sortType == 'Year' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="$ctrl.sortType == 'Year' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
-        </a>
-    </li>
+        <div class="col-md-2">
+            <a ng-click="$ctrl.sort('Year')">
+                Year
+                <span ng-show="$ctrl.sortType == 'Year' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'Year' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </div>
 
-    <li class="col-md-2">
-        <a ng-click="$ctrl.sort('Type')">
-            Type
-            <span ng-show="$ctrl.sortType == 'Type' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
-            <span ng-show="$ctrl.sortType == 'Type' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
-        </a>
-    </li>
-</ul>
+        <div class="col-md-2">
+            <a ng-click="$ctrl.sort('Type')">
+                Type
+                <span ng-show="$ctrl.sortType == 'Type' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="$ctrl.sortType == 'Type' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </div>
+    </div>
 
-<ul ng-repeat="item in $ctrl.itemsList | orderBy:$ctrl.sortType:$ctrl.sortReverse">
-    <li class="col-md-2" style="height: 30px;">
-        <a ui-sref="home.details({id:item.imdbID})">ID: {{::item.imdbID}}</a>
-    </li>
-    <li class="col-md-2" style="height: 30px;">
-        <img width="30" height="30" ng-src="{{::item.Poster}}" />
-    </li>
-    <li class="col-md-4" style="height: 30px;">
-        Title: {{::item.Title}}
-    </li>
-    <li class="col-md-2" style="height: 30px;">
-        Year: {{::item.Year}}
-    </li>
-    <li class="col-md-2" style="height: 30px;">
-        Year: {{::item.Type}}
-    </li>
-</ul>
+    <div ng-repeat="item in $ctrl.itemsList | orderBy:$ctrl.sortType:$ctrl.sortReverse">
+        <div class="col-md-2" style="height: 30px;">
+            <!--<a ui-sref="home.details({id:item.imdbID})">ID: {{::item.imdbID}}</a>-->
+            <a ng-click="$ctrl.selectedItem.imdbID = item.imdbID">ID: {{::item.imdbID}}</a>
+        </div>
+        <div class="col-md-2" style="height: 30px;">
+            <img width="30" height="30" ng-src="{{::item.Poster}}" />
+        </div>
+        <div class="col-md-4" style="height: 30px;">
+            Title: {{::item.Title}}
+        </div>
+        <div class="col-md-2" style="height: 30px;">
+            Year: {{::item.Year}}
+        </div>
+        <div class="col-md-2" style="height: 30px;">
+            Year: {{::item.Type}}
+        </div>
+
+        <div ng-if="$ctrl.selectedItem.imdbID == item.imdbID" class="col-md-12" style="background-color:grey">
+            <button style="width:100%;text-align: right;" ng-click="$ctrl.selectedItem = null" type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <card id="item.imdbID"></card>
+        </div>
+    </div>
 </div>
