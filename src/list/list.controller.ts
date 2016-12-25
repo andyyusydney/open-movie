@@ -6,8 +6,6 @@ class ListController implements ng.IComponentController {
     constructor($stateParams) {
         console.log('list controller');
         //console.log("this.itemsList=", this.itemsList);
-        console.log("$stateParams.listData=", $stateParams.listData);
-        this.itemsList = $stateParams.listData;
     }
 
     private sort(fieldName) {

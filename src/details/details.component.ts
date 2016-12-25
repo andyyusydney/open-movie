@@ -3,5 +3,8 @@ import detailsController from './details.controller';
 
 export default {
     template: template,
-    controller: detailsController
+    controller: detailsController,
+    bindings: {
+        previousState: '<'
+    }
 };

@@ -1,5 +1,9 @@
 details html
 
+<ul>
+    <li><a ui-sref="{{$ctrl.previousState.Name}}($ctrl.previousState.Params)">Back</a></li>
+</ul>
+
 <div style="margin-left: 20px;" ng-repeat="(key, value) in $ctrl.detailsData">
     <span><strong>{{key}}:</strong></span>
     <span>{{value}}</span>

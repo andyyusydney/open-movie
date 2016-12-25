@@ -37,7 +37,7 @@ class SearchService implements ISearchService {
             query += 'y=' + searchParams.y;
         }
 
-        if (searchParams.i) { // year
+        if (searchParams.i) { // id
             if (query) query += '&';
             query += 'i=' + searchParams.i;
         }
