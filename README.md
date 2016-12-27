@@ -1,11 +1,11 @@
 # open-movie
-movie search, details, sorting. Angular 1.5, typescript, webpack.
+movie search, details, card layout, sorting. Angular 1.5, typescript, webpack.
 
 ### Install
 
 ```sh
 npm i webpack typings typescript -g
-git clone git@github.com/andyyusydney/open-movie.git
+git clone https://github.com/andyyusydney/open-movie.git
 cd open-movie
 npm install
 npm start
