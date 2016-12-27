@@ -6,6 +6,7 @@ import 'angular-ui-router';
 import detailsComponent from './details.component';
 import routing from './details.routes';
 import {DetailsService} from '../services/details.service';
+import './details.scss';
 
 let dependencies = ['ui.router'];
 

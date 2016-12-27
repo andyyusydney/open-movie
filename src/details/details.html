@@ -1,10 +1,58 @@
-details html
+<div class="content_details">
+    <div class="back">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span>
+        <a ui-sref="{{$ctrl.previousState.Name}}($ctrl.previousState.Params)">Back</a>
+    </div>
 
-<ul>
-    <li><a ui-sref="{{$ctrl.previousState.Name}}($ctrl.previousState.Params)">Back</a></li>
-</ul>
-
-<div style="margin-left: 20px;" ng-repeat="(key, value) in $ctrl.detailsData">
-    <span><strong>{{key}}:</strong></span>
-    <span>{{value}}</span>
+    <div class="row content">
+        <div class="col-sm-3 poster">
+            <img height="300" ng-src="{{$ctrl.detailsData.Poster}}">
+        </div>
+        <div class="col-sm-9">
+            <div class="col-sm-12 info_item title">
+                <span class="lead">{{$ctrl.detailsData.Title}} ({{$ctrl.detailsData.Year}})</span>
+                <span class="rated panel">{{$ctrl.detailsData.Rated}}</span>
+            </div>
+            <div class="col-sm-12 info_item user_rating">
+                <span class="term">User Rating</span> {{$ctrl.detailsData.
+tomatoUserRating}}/5 ({{$ctrl.detailsData.tomatoUserReviews | number}} reviews)
+            </div>
+            <div class="col-sm-12 info_item director">
+                <span class="term">Directed by</span> {{$ctrl.detailsData.Director}}
+            </div>
+            <div class="col-sm-12 info_item actors">
+                <span class="term">Actors:</span> {{$ctrl.detailsData.Actors}}
+            </div>
+            <div class="col-sm-12 group-info">
+                <div class="row">
+                    <div class="col-sm-6 info_item type">
+                        <span class="term">Type:</span> {{$ctrl.detailsData.Type}}
+                    </div>
+                    <div class="col-sm-6 info_item language">
+                        <span class="term">Language:</span> {{$ctrl.detailsData.Language}}
+                    </div>
+                    <div class="col-sm-6 info_item released_date">
+                        <span class="term">Released Date:</span> {{$ctrl.detailsData.Released}}
+                    </div>
+                    <div class="col-sm-6 info_item country">
+                        <span class="term">Country:</span> {{$ctrl.detailsData.Country}}
+                    </div>
+                    <div class="col-sm-6 info_item runtime">
+                        <span class="term">Runtime:</span> {{$ctrl.detailsData.Runtime}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 info_item writer">
+                <span class="term">Writer:</span> {{$ctrl.detailsData.Writer}}
+            </div>
+            <div class="col-sm-12 info_item genre">
+                <span class="term">Genre:</span> {{$ctrl.detailsData.Genre}}
+            </div>
+        </div>
+    </div>
+    <div class="plot">
+        <div class="col-sm-12 info_item plot">
+            {{$ctrl.detailsData.Plot}}
+        </div>
+    </div>
 </div>
