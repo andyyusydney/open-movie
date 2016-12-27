@@ -1,16 +1,16 @@
 <div class="list_container">
-    <div class="list_header">
-        <div class="col-sm-2 item-col"> </div>
+    <div ng-if="$ctrl.itemsList.length" class="list_header">
+        <div class="col-sm-3 item-col"> </div>
         <div class="col-sm-4 item-col">
-            <a ng-click="$ctrl.sort('Title')">
+            <a class="panel" ng-click="$ctrl.sort('Title')">
                 Title
                 <span ng-show="$ctrl.sortType == 'Title' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="$ctrl.sortType == 'Title' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
             </a>
         </div>
 
-        <div class="col-sm-3 item-col">
-            <a ng-click="$ctrl.sort('Year')">
+        <div class="col-sm-2 item-col">
+            <a class="panel" ng-click="$ctrl.sort('Year')">
                 Year
                 <span ng-show="$ctrl.sortType == 'Year' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="$ctrl.sortType == 'Year' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="col-sm-3 item-col">
-            <a ng-click="$ctrl.sort('Type')">
+            <a class="panel" ng-click="$ctrl.sort('Type')">
                 Type
                 <span ng-show="$ctrl.sortType == 'Type' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="$ctrl.sortType == 'Type' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
@@ -27,19 +27,19 @@
     </div>
 
     <div class="item" ng-repeat="item in $ctrl.itemsList | orderBy:$ctrl.sortType:$ctrl.sortReverse">
-        <div class="col-sm-2 item-col movie-thumbnail">
+        <div class="col-sm-3 item-col movie-thumbnail">
             <a ng-click="$ctrl.selectedItem.imdbID = item.imdbID">
-                <img width="75" height="112" ng-src="{{::item.Poster}}" />
+                <img height="112" ng-src="{{::item.Poster}}" />
             </a>
         </div>
         <div class="col-sm-4 item-col title">
-            Title: {{::item.Title}}
+            {{::item.Title}}
         </div>
-        <div class="col-sm-3 item-col year">
-            Year: {{::item.Year}}
+        <div class="col-sm-2 item-col year">
+            {{::item.Year}}
         </div>
         <div class="col-sm-3 item-col type">
-            Type: {{::item.Type}}
+            {{::item.Type}}
         </div>
 
         <div ng-if="$ctrl.selectedItem.imdbID == item.imdbID" class="col-md-12" style="background-color:grey">

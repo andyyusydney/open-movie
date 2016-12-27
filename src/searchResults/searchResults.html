@@ -1,3 +1,7 @@
+<div class="results-count">
+    {{$ctrl.searchResults.length || 0}} results
+</div>
+
 <div ng-if="$ctrl.displaySearchResults">
     <list items-list="$ctrl.searchResults"></list>
 </div>

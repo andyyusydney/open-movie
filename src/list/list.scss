@@ -1,7 +1,19 @@
 .list_container {
+    .list_header {
+        .item-col {
+            a.panel {
+                background-color: #272727;
+                padding: 0 10px;
+            }
+        }
+    }
     .item {
         .item-col {
             height: 130px;
+            padding: 0 25px;
+            >a:hover {
+                cursor: pointer;
+            }
         }
         @media (max-width: 767px) {
             .item-col {

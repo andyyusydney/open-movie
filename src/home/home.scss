@@ -2,6 +2,14 @@ body {
     &.open-movie {
         color: #dbdbdb;
         background-color: #3a3a3a;
+        a {
+            cursor: pointer;
+            color: #85c7f2;
+            text-decoration: none;
+            &:hover, &:active, &:focus {
+                color: #85c7f2;
+            }
+        }
         .header {
             padding: 20px 2%;
             background-color: #272727;
@@ -9,13 +17,6 @@ body {
                 margin: 0 0;
                 font-size:28px;
                 text-transform: uppercase;
-                a {
-                    color: #85c7f2;
-                    text-decoration: none;
-                    &:hover, &:active, &:focus {
-                        color: #43ac6a;
-                    }
-                }
             }
         }
         .content {
