@@ -1,0 +1,12 @@
+.list_container {
+    .item {
+        .item-col {
+            height: 130px;
+        }
+        @media (max-width: 767px) {
+            .item-col {
+                height: auto;
+            }
+        }
+    }
+}

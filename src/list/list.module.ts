@@ -5,6 +5,7 @@ import 'angular-ui-router';
 
 import listComponent from './list.component';
 import routing from './list.routes';
+import './list.scss';
 
 let dependencies = ['ui.router'];
 
