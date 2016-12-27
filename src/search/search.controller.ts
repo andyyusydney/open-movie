@@ -4,6 +4,7 @@ class SearchController implements ng.IComponentController {
     private type: string;
     private year: string;
     private id: string;
+    private searchBy: string;
 
     constructor($state: any, $stateParams: any) {
         console.log('search controller');
@@ -13,6 +14,8 @@ class SearchController implements ng.IComponentController {
         this.year = $stateParams.y;
         this.id = $stateParams.i;
         this.$state = $state;
+        this.searchBy = 'title';
+        this.type = '';
     }
 
     private goSearch = () => {

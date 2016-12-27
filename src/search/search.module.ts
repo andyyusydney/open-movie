@@ -5,6 +5,7 @@ import 'angular-ui-router';
 import listModule from '../list/list.module';
 
 import searchComponent from './search.component';
+import './search.scss';
 
 let dependencies = ['ui.router', listModule];
 

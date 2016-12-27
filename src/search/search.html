@@ -1,20 +1,31 @@
-search html
-<form class="form-inline" name="search-form" ng-submit="$ctrl.goSearch()">
+<!-- search html -->
+<form class="form-inline search-form" name="search-form" ng-submit="$ctrl.goSearch()">
   <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" name="title" ng-value="$ctrl.title" ng-model="$ctrl.title" placeholder="Title">
+    <select class="form-control input-sm search-by" ng-value="$ctrl.searchBy" ng-model="$ctrl.searchBy">
+      <option value="title">Title</option>
+      <option value="id">ID</option>
+    </select>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-if="$ctrl.searchBy == 'id'">
+    <input type="text" class="form-control input-sm id" id="id" name="id" ng-value="$ctrl.id" ng-model="$ctrl.id" placeholder="IMDb ID">
+  </div>
+  <div class="form-group" ng-if="$ctrl.searchBy == 'title'">
+    <input type="text" class="form-control input-sm title" id="title" name="title" ng-value="$ctrl.title" ng-model="$ctrl.title" placeholder="Title">
+  </div>
+  <div class="form-group text-left" ng-if="$ctrl.searchBy == 'title'">
     <label for="type">Type</label>
-    <input type="text" class="form-control" id="type" name="type" ng-value="$ctrl.type" ng-model="$ctrl.type" placeholder="Type">
+    <select class="form-control input-sm type" id="type" name="type" ng-value="$ctrl.type" ng-model="$ctrl.type" placeholder="Type">
+      <option value="">all</option>
+      <option value="movie">movie</option>
+      <option value="series">series</option>
+      <option value="episode">episode</option>
+    </select>
   </div>
-  <div class="form-group">
+  <div class="form-group text-left" ng-if="$ctrl.searchBy == 'title'">
     <label for="year">Year</label>
-    <input type="text" class="form-control" id="year" name="year" ng-value="$ctrl.year" ng-model="$ctrl.year" placeholder="Released Year">
+    <input type="text" class="form-control input-sm year" id="year" name="year" ng-value="$ctrl.year" ng-model="$ctrl.year" placeholder="Released Year">
   </div>
-  <div class="form-group">
-    <label for="id">ID</label>
-    <input type="text" class="form-control" id="id" name="id" ng-value="$ctrl.id" ng-model="$ctrl.id" placeholder="IMDb ID">
+  <div class="form-group text-left">
+    <button type="submit" class="btn btn-sm btn-primary">Search</button>
   </div>
-  <button type="submit" class="btn btn-sm btn-primary">Search</button>
 </form>

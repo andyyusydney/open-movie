@@ -5,6 +5,7 @@ import 'angular-ui-router';
 
 import homeComponent from './home.component';
 import routing from './home.routes';
+import './home.scss';
 
 let dependencies = ['ui.router'];
 

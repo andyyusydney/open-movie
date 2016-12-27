@@ -1,9 +1,18 @@
-home html
-<ul>
-    <li><a ui-sref="home">Home</a></li>
-</ul>
+<!-- home html -->
+<div class="row header">
+    <div class="col-md-3">
+        <h1 class="pull-left">
+            <a ui-sref="home">Open Movie</a>
+        </h1>
+    </div>
 
-<search></search>
-<br><br>
+    <div class="col-md-9">
+        <search class="text-right"></search>
+    </div>
+</div>
 
-<div ui-view>home content</div>
+<div class="row content">
+    <div class="col-md-12">
+        <div ui-view>home content</div>
+    </dov>
+</div>
