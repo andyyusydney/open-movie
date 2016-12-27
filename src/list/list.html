@@ -1,7 +1,7 @@
 <div class="list_container">
-    <div ng-if="$ctrl.itemsList.length" class="list_header">
+    <div ng-if="$ctrl.itemsList.length" class="row list_header">
         <div class="col-sm-3 item-col"> </div>
-        <div class="col-sm-4 item-col">
+        <div class="col-sm-5 item-col">
             <a class="panel" ng-click="$ctrl.sort('Title')">
                 Title
                 <span ng-show="$ctrl.sortType == 'Title' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
@@ -17,7 +17,7 @@
             </a>
         </div>
 
-        <div class="col-sm-3 item-col">
+        <div class="col-sm-2 item-col">
             <a class="panel" ng-click="$ctrl.sort('Type')">
                 Type
                 <span ng-show="$ctrl.sortType == 'Type' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
@@ -26,24 +26,25 @@
         </div>
     </div>
 
-    <div class="item" ng-repeat="item in $ctrl.itemsList | orderBy:$ctrl.sortType:$ctrl.sortReverse">
+    <div class="row item" ng-repeat="item in $ctrl.itemsList | orderBy:$ctrl.sortType:$ctrl.sortReverse">
         <div class="col-sm-3 item-col movie-thumbnail">
             <a ng-click="$ctrl.selectedItem.imdbID = item.imdbID">
                 <img height="112" ng-src="{{::item.Poster}}" />
             </a>
         </div>
-        <div class="col-sm-4 item-col title">
+        <div class="col-sm-5 item-col title">
             {{::item.Title}}
         </div>
         <div class="col-sm-2 item-col year">
             {{::item.Year}}
         </div>
-        <div class="col-sm-3 item-col type">
+        <div class="col-sm-2 item-col type">
             {{::item.Type}}
         </div>
+        <div class="clearfix"></div>
 
-        <div ng-if="$ctrl.selectedItem.imdbID == item.imdbID" class="col-md-12" style="background-color:grey">
-            <button style="width:100%;text-align: right;" ng-click="$ctrl.selectedItem = null" type="button" class="close" aria-label="Close">
+        <div ng-if="$ctrl.selectedItem.imdbID == item.imdbID" class="col-md-12 card_details_container">
+            <button ng-click="$ctrl.selectedItem = null" type="button" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             <card id="item.imdbID"></card>

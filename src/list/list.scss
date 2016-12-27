@@ -9,15 +9,16 @@
     }
     .item {
         .item-col {
-            height: 130px;
-            padding: 0 25px;
+            padding: 0 25px 10px;
             >a:hover {
                 cursor: pointer;
             }
         }
-        @media (max-width: 767px) {
-            .item-col {
-                height: auto;
+        .card_details_container {
+            .close {
+                padding-right: 10px;
+                width:100%;
+                text-align: right;
             }
         }
     }

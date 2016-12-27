@@ -1,4 +1,27 @@
-card details
-<button type="button" class="btn btn-info"><a ui-sref="home.details({id:$ctrl.shortData.imdbID})">Show more</a></button>
-<br>
-{{$ctrl.shortData}}
+<div class="card_details">
+    <div class="row">
+        <div class="col-sm-3">
+            <img height="200" ng-src="{{$ctrl.shortData.Poster}}">
+        </div>
+        <div class="col-sm-9">
+            <div class="col-sm-12 info_item lead title">
+                {{$ctrl.shortData.Title}} ({{$ctrl.shortData.Year}})
+            </div>
+            <div class="col-sm-12 info_item director">
+                <span class="term">Directed by</span> {{$ctrl.shortData.Director}}
+            </div>
+            <div class="col-sm-12 info_item actors">
+                <span class="term">Actors:</span> {{$ctrl.shortData.Actors}}
+            </div>
+            <div class="col-sm-12 info_item genre">
+                <span class="term">Genre:</span> {{$ctrl.shortData.Genre}}
+            </div>
+            <div class="col-sm-12 info_item plot">
+                {{$ctrl.shortData.Plot}}
+            </div>
+            <div class="col-sm-12 show_more">
+                <button type="button" ui-sref="home.details({id:$ctrl.shortData.imdbID})" class="btn btn-sm btn-primary">Show more</button>
+            </div>
+        </div>
+    </div>
+</div>

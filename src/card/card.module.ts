@@ -4,6 +4,7 @@ import angular = require('angular');
 import 'angular-ui-router';
 
 import cardComponent from './card.component';
+import './card.scss';
 
 let dependencies = ['ui.router'];
 
